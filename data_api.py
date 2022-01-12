@@ -44,7 +44,7 @@ def get_movie_data(movie_title):
     baseurl='http://www.omdbapi.com/'
     params_dict={}
     #The API_KEY here has been altered slightly to prevent unwanted use. If needed for testing, you can request for mine
-    params_dict['apikey']= '33e0b99w'
+    params_dict['apikey']= '33e0b992'
     params_dict['t']= movie_title
     params_dict['r']= 'json'
     resp = requests.get(baseurl,params_dict)
@@ -86,4 +86,8 @@ def get_sorted_recommendations(lst):
 
 
 
-print(get_sorted_recommendations(['Deadpool','Friday']))
+movies = input('Enter movie titles separated by commas').split(',')
+
+
+#print (movies)
+print(get_sorted_recommendations(movies))
